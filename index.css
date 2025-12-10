@@ -14,6 +14,10 @@ body {
   border-bottom: 1px solid #ddd;
 }
 
+.logo {
+  height: 60px;
+}
+
 .nav a {
   margin-left: 15px;
   text-decoration: none;
@@ -30,11 +34,25 @@ section {
   padding: 40px 20px;
 }
 
+/* HERO */
 .hero {
   background: #e0ffe0;
   text-align: center;
 }
 
+/* WELCOME IMAGE */
+.welcome-img {
+  width: 90%;
+  max-width: 850px;
+  margin-top: 20px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* BOX STYLES */
 .events .event-card, .gst, .contact {
   border: 1px solid #dcecdc;
   padding: 15px;
