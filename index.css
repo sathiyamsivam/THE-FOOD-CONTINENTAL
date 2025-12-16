@@ -1,0 +1,443 @@
+/* -------------------------
+ ROOT COLORS
+-------------------------- */
+:root {
+--green-primary: #2E7D32;
+--green-accent: #81C784;
+--brown-secondary: #6D4C41;
+--cream-bg: #FAF9F6;
+--text-dark: #2B2B2B;
+--border-muted: #DDE5D1;
+}
+
+/* -------------------------
+ GLOBAL STYLES
+-------------------------- */
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+font-family: "Segoe UI", Arial, sans-serif;
+background-color: var(--cream-bg);
+color: var(--text-dark);
+line-height: 1.7;
+}
+
+a {
+text-decoration: none;
+color: inherit;
+}
+
+/* -------------------------
+   HEADER
+-------------------------- */
+.header {
+  background-color: var(--green-primary);
+  padding: 14px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* -------------------------
+   NAVIGATION
+-------------------------- */
+.nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 0%;
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  gap: 36px;
+}
+
+/* Nav links */
+.nav a {
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  position: relative;
+  padding: 6px 0;
+  transition: color 0.3s ease;
+}
+
+/* Hover underline effect */
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--green-accent);
+  transition: width 0.3s ease;
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
+/* Hover text color */
+.nav a:hover {
+  color: var(--green-accent);
+}
+
+/* Active page (optional – add class="active") */
+.nav a.active {
+  color: var(--green-accent);
+}
+
+.nav a.active::after {
+  width: 100%;
+}
+
+/* -------------------------
+   RESPONSIVE HEADER
+-------------------------- */
+@media (max-width: 768px) {
+  .nav {
+    flex-wrap: wrap;
+    gap: 18px;
+    padding: 0 8%;
+  }
+
+  .nav a {
+    font-size: 0.9rem;
+  }
+}
+
+
+/* -------------------------
+ HERO SECTION
+-------------------------- */
+.hero {
+  min-height: 80vh;
+  background:
+    linear-gradient(
+      rgba(250, 249, 246, 0.65),
+      rgba(250, 249, 246, 0.65)
+    ),
+    url("https://images.unsplash.com/photo-1501004318641-b39e6451bec6")
+    center / cover no-repeat;
+
+  padding: 60px 10%;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  align-items: center;
+}
+
+
+
+
+.logo {
+max-width: 220px;
+}
+
+.hero-content h1 {
+font-size: 2.5rem;
+color: var(--green-primary);
+margin-bottom: 20px;
+}
+
+.hero-content p {
+font-size: 1.05rem;
+margin-bottom: 24px;
+color: var(--text-dark);
+}
+
+.hero-btn {
+display: inline-block;
+background-color: var(--green-primary);
+color: #ffffff;
+padding: 12px 28px;
+border-radius: 6px;
+font-weight: 600;
+transition: background 0.3s ease;
+}
+
+.hero-btn:hover {
+background-color: var(--brown-secondary);
+}
+
+/* -------------------------
+   ABOUT SECTION
+-------------------------- */
+.about {
+  padding: 70px 12%;
+  background: linear-gradient(
+    180deg,
+    #FAF9F6 0%,
+    #F3F7F2 100%
+  );
+  border-top: 1px solid var(--border-muted);
+  border-bottom: 1px solid var(--border-muted);
+  text-align: center;
+}
+
+/* Heading */
+.about h2 {
+  font-size: 2.1rem;
+  color: var(--green-primary);
+  margin-bottom: 22px;
+  position: relative;
+  display: inline-block;
+}
+
+/* Decorative underline */
+.about h2::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -8px;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 3px;
+  background-color: var(--green-accent);
+  border-radius: 2px;
+}
+
+/* Paragraph */
+.about p {
+  max-width: 900px;
+  margin: 0 auto;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--text-dark);
+}
+
+/* Highlight important words */
+.about strong {
+  color: var(--brown-secondary);
+  font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about {
+    padding: 50px 8%;
+  }
+
+  .about h2 {
+    font-size: 1.8rem;
+  }
+
+  .about p {
+    font-size: 0.95rem;
+  }
+}
+
+/* -------------------------
+   FEATURE BOX
+-------------------------- */
+.feature-product {
+  background-color: #E8F5E9;
+  padding: 32px;
+  border-radius: 14px;
+  border: 1px solid var(--border-muted);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+/* Hover effect */
+.feature-product:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12);
+}
+
+/* Decorative top bar */
+.feature-product::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 6px;
+  width: 100%;
+  background: linear-gradient(
+    to right,
+    var(--green-primary),
+    var(--green-accent)
+  );
+  border-radius: 14px 14px 0 0;
+}
+
+/* Paragraphs */
+.feature-product p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--text-dark);
+  margin-bottom: 14px;
+}
+
+/* Headings inside box */
+.feature-product h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--green-primary);
+  margin-bottom: 16px;
+}
+
+/* Sub text / notes */
+.feature-product p small {
+  color: #666;
+  font-size: 0.85rem;
+}
+
+/* Lists */
+.feature-product ul {
+  margin: 12px 0 16px;
+  padding-left: 22px;
+}
+
+.feature-product li {
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+/* Custom bullet color */
+.feature-product li::marker {
+  color: var(--green-primary);
+}
+
+/* Strong / highlighted text */
+.feature-product strong {
+  color: var(--brown-secondary);
+  font-weight: 600;
+}
+
+/* Links inside feature box */
+.feature-product a {
+  color: var(--green-primary);
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+.feature-product a:hover {
+  color: var(--brown-secondary);
+}
+
+/* Emoji or icon spacing */
+.feature-product h3 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Divider inside box (optional) */
+.feature-product hr {
+  border: none;
+  height: 1px;
+  background-color: var(--border-muted);
+  margin: 18px 0;
+}
+
+/* Tag / badge style (optional use) */
+.feature-product .tag {
+  display: inline-block;
+  background-color: var(--green-accent);
+  color: #ffffff;
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  border-radius: 20px;
+  margin-top: 10px;
+}
+
+/* -------------------------
+   DESCRIPTION SECTION
+-------------------------- */
+.discription {
+  padding: 60px 12%;
+  background-color: #F3F7F2; /* soft organic background */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  border-top: 1px solid var(--border-muted);
+}
+
+/* Individual description cards */
+.discription > div {
+  background: linear-gradient(
+    135deg,
+    #ffffff,
+    #E8F5E9
+  );
+  padding: 28px;
+  border-radius: 14px;
+  border: 1px solid var(--border-muted);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect */
+.discription > div:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12);
+}
+
+/* Headings */
+.discription h3 {
+  font-size: 1.3rem;
+  color: var(--green-primary);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Paragraph text */
+.discription p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--text-dark);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .discription {
+    padding: 40px 8%;
+  }
+
+  .discription > div {
+    padding: 22px;
+  }
+}
+
+
+/* -------------------------
+ FOOTER
+-------------------------- */
+.footer {
+background-color: var(--brown-secondary);
+color: var(--cream-bg);
+text-align: center;
+padding: 20px;
+margin-top: 40px;
+font-size: 0.9rem;
+}
+
+/* -------------------------
+ RESPONSIVE
+-------------------------- */
+@media (max-width: 768px) {
+.hero {
+  grid-template-columns: 1fr;
+  text-align: center;
+}
+
+.logo {
+  margin: 0 auto;
+}
+
+.nav {
+  flex-wrap: wrap;
+  gap: 20px;
+}
+}
