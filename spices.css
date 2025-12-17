@@ -1,0 +1,322 @@
+/* -------------------------
+ ROOT COLORS
+-------------------------- */
+:root {
+--green-primary: #2E7D32;
+--green-accent: #81C784;
+--brown-secondary: #6D4C41;
+--cream-bg: #FAF9F6;
+--text-dark: #2B2B2B;
+--border-muted: #DDE5D1;
+}
+
+/* -------------------------
+ GLOBAL STYLES
+-------------------------- */
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+font-family: "Segoe UI", Arial, sans-serif;
+background-color: var(--cream-bg);
+color: var(--text-dark);
+line-height: 1.7;
+}
+
+a {
+text-decoration: none;
+color: inherit;
+}
+
+/* -------------------------
+   HEADER
+-------------------------- */
+.header {
+  background-color: var(--green-primary);
+  padding: 14px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* -------------------------
+   NAVIGATION
+-------------------------- */
+.nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 0%;
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  gap: 36px;
+}
+
+/* Nav links */
+.nav a {
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  position: relative;
+  padding: 6px 0;
+  transition: color 0.3s ease;
+}
+
+/* Hover underline effect */
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--green-accent);
+  transition: width 0.3s ease;
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
+/* Hover text color */
+.nav a:hover {
+  color: var(--green-accent);
+}
+
+/* Active page (optional – add class="active") */
+.nav a.active {
+  color: var(--green-accent);
+}
+
+.nav a.active::after {
+  width: 100%;
+}
+
+/* -------------------------
+   RESPONSIVE HEADER
+-------------------------- */
+@media (max-width: 768px) {
+  .nav {
+    flex-wrap: wrap;
+    gap: 18px;
+    padding: 0 8%;
+  }
+
+  .nav a {
+    font-size: 0.9rem;
+  }
+}
+
+/* -------------------------
+   DROPDOWN MENU
+-------------------------- */
+/* Fix dropdown alignment */
+.dropdown {
+  display: flex;
+  align-items: center;
+  position: relative;   /*  REQUIRED */
+}
+
+
+.dropbtn {
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  padding: 6px 0;
+  line-height: 1.2;      /*ALIGNMENT FIX */
+  position: relative;
+  display: inline-flex; /* ENSURES SAME BEHAVIOR AS <a> */
+  align-items: center;
+}
+
+
+
+/* Dropdown content */
+.dropdown-content {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  background-color: #ffffff;
+  min-width: 220px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.25s ease;
+  z-index: 1000;
+}
+
+/* Dropdown links */
+.dropdown-content a {
+  display: block;
+  padding: 12px 18px;
+  color: var(--text-dark);
+  font-size: 0.9rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* Hover effect */
+.dropdown-content a:hover {
+  background-color: #F3F7F2;
+  color: var(--green-primary);
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Arrow color fix */
+.dropbtn:hover {
+  color: var(--green-accent);
+}
+
+.dropbtn::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--green-accent);
+  transition: width 0.3s ease;
+}
+
+.dropdown:hover .dropbtn::after {
+  width: 100%;
+}
+
+/* -------------------------
+   SPICES SECTION
+-------------------------- */
+.spices {
+  padding: 70px 12%;
+  background-color: #FAF9F6;
+  text-align: center;
+}
+
+.spices h2 {
+  font-size: 2.1rem;
+  color: #2E7D32;
+  margin-bottom: 40px;
+}
+
+.spice-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+/* Grid */
+.spices-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+/* Card */
+.spice-card {
+  background: linear-gradient(135deg, #ffffff, #E8F5E9);
+  padding: 30px;
+  border-radius: 14px;
+  border: 1px solid #DDE5D1;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+}
+
+.spice-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12);
+}
+
+/* Text */
+.spice-card h3 {
+  color: #2E7D32;
+  margin-bottom: 12px;
+}
+
+.spice-card p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #2B2B2B;
+}
+
+.spice-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .spices {
+    padding: 50px 8%;
+  }
+}
+
+/* -------------------------
+ FOOTER
+-------------------------- */
+.footer {
+background-color: var(--brown-secondary);
+color: var(--cream-bg);
+text-align: center;
+padding: 20px;
+margin-top: 40px;
+font-size: 0.9rem;
+}
+
+/* Make all cards equal height */
+.spices-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  align-items: stretch; /* 🔥 important */
+}
+
+/* Equal height cards */
+.spice-card {
+  height: 100%; /* 🔥 */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* Fix image size */
+.spice-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+/* Fix title height */
+.spice-card h3 {
+  min-height: 48px; /* keeps titles aligned */
+}
+
+/* Clamp paragraph text */
+.spice-card p {
+  flex-grow: 1;
+  overflow: hidden;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* 🔥 same number of lines */
+  -webkit-box-orient: vertical;
+}
+
+.spice-card:hover p {
+  -webkit-line-clamp: unset;
+}

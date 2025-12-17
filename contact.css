@@ -1,0 +1,388 @@
+* -------------------------
+ ROOT COLORS
+-------------------------- */
+:root {
+--green-primary: #2E7D32;
+--green-accent: #81C784;
+--brown-secondary: #6D4C41;
+--cream-bg: #FAF9F6;
+--text-dark: #2B2B2B;
+--border-muted: #DDE5D1;
+}
+
+/* -------------------------
+ GLOBAL STYLES
+-------------------------- */
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+font-family: "Segoe UI", Arial, sans-serif;
+background-color: var(--cream-bg);
+color: var(--text-dark);
+line-height: 1.7;
+}
+
+a {
+text-decoration: none;
+color: inherit;
+}
+
+/* -------------------------
+   HEADER
+-------------------------- */
+.header {
+  background-color: var(--green-primary);
+  padding: 14px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* -------------------------
+   NAVIGATION
+-------------------------- */
+.nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 0%;
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  gap: 36px;
+}
+
+/* Nav links */
+.nav a {
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  position: relative;
+  padding: 6px 0;
+  transition: color 0.3s ease;
+}
+
+/* Hover underline effect */
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--green-accent);
+  transition: width 0.3s ease;
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
+/* Hover text color */
+.nav a:hover {
+  color: var(--green-accent);
+}
+
+/* Active page (optional – add class="active") */
+.nav a.active {
+  color: var(--green-accent);
+}
+
+.nav a.active::after {
+  width: 100%;
+}
+
+/* -------------------------
+   RESPONSIVE HEADER
+-------------------------- */
+@media (max-width: 768px) {
+  .nav {
+    flex-wrap: wrap;
+    gap: 18px;
+    padding: 0 8%;
+  }
+
+  .nav a {
+    font-size: 0.9rem;
+  }
+}
+
+/* -------------------------
+   DROPDOWN MENU
+-------------------------- */
+/* Fix dropdown alignment */
+.dropdown {
+  display: flex;
+  align-items: center;
+  position: relative;   /*  REQUIRED */
+}
+
+
+.dropbtn {
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  padding: 6px 0;
+  line-height: 1.2;      /*ALIGNMENT FIX */
+  position: relative;
+  display: inline-flex; /* ENSURES SAME BEHAVIOR AS <a> */
+  align-items: center;
+}
+
+
+
+/* Dropdown content */
+.dropdown-content {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  background-color: #ffffff;
+  min-width: 220px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.25s ease;
+  z-index: 1000;
+}
+
+/* Dropdown links */
+.dropdown-content a {
+  display: block;
+  padding: 12px 18px;
+  color: var(--text-dark);
+  font-size: 0.9rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* Hover effect */
+.dropdown-content a:hover {
+  background-color: #F3F7F2;
+  color: var(--green-primary);
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Arrow color fix */
+.dropbtn:hover {
+  color: var(--green-accent);
+}
+
+.dropbtn::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--green-accent);
+  transition: width 0.3s ease;
+}
+
+.dropdown:hover .dropbtn::after {
+  width: 100%;
+}
+
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: #f4f7f2; /* soft organic cream */
+  color: #2f2f2f;
+}
+
+/* ===== HEADER ===== */
+.header {
+  background: linear-gradient(90deg, #1f5e3b, #2f7d4a);
+  padding: 16px 50px;
+}
+
+/* ===== NAV ===== */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.nav a {
+  color: #f0fff4;
+  font-weight: 600;
+  text-decoration: none;
+  position: relative;
+  padding: 6px 0;
+}
+
+.nav a:hover {
+  color: #d6f5d6;
+}
+
+/* underline animation */
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background-color: #c9a24d; /* earth gold */
+  transition: width 0.3s ease;
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
+/* ===== DROPDOWN ===== */
+.dropdown {
+  position: relative;
+}
+
+.dropbtn {
+  cursor: pointer;
+}
+
+.dropdown-content {
+  position: absolute;
+  top: 120%;
+  left: 0;
+  background-color: #ffffff;
+  min-width: 220px;
+  border-radius: 10px;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.25s ease;
+  z-index: 999;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 12px 18px;
+  color: #2f2f2f;
+  font-size: 15px;
+}
+
+.dropdown-content a:hover {
+  background-color: #f3f7f2;
+  color: #1f5e3b;
+}
+
+.dropdown:hover .dropdown-content {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* ===== CONTACT SECTION ===== */
+.contact {
+  max-width: 900px;
+  margin: 60px auto 30px;
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.contact h1 {
+  color: #1f5e3b;
+  margin-bottom: 20px;
+}
+
+.contact p {
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 12px;
+}
+
+/* ===== GST SECTION ===== */
+.gst {
+  max-width: 900px;
+  margin: 0 auto 60px;
+  background-color: #fffdf7;
+  padding: 40px;
+  border-radius: 16px;
+  border-left: 6px solid #8b5a2b;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+}
+
+.gst h2 {
+  color: #8b5a2b;
+  margin-bottom: 18px;
+}
+
+.gst p {
+  font-size: 15.5px;
+  line-height: 1.8;
+  margin-bottom: 10px;
+}
+
+/* ===== STRONG TEXT ===== */
+.contact strong,
+.gst strong {
+  color: #1f5e3b;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  background-color: #1f5e3b;
+  color: #e9f6ee;
+  text-align: center;
+  padding: 18px;
+  font-size: 14px;
+}
+
+/* HEADER LAYOUT */
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* LOGO */
+
+
+.logo-link {
+  display: flex;
+  align-items: center;
+}
+/* LOGO BACKGROUND FIX */
+.logo-box {
+  background-color: #ffffff; /* white background */
+  padding: 6px 14px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+}
+
+/* LOGO IMAGE */
+.logo {
+  height: 70px;
+  width: auto;
+}
+
+/* LOGO LINK */
+.logo-link {
+  text-decoration: none;
+}
