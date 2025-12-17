@@ -401,5 +401,9 @@ body {
 .map iframe {
   border-radius: 12px;
 }
+.whatsapp-link i {
+  font-size: 20px;
+}
+
 
 
