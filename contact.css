@@ -386,3 +386,20 @@ body {
 .logo-link {
   text-decoration: none;
 }
+
+.map {
+  margin: 40px auto;
+  max-width: 1000px;
+  padding: 0 15px;
+}
+
+.map h2 {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.map iframe {
+  border-radius: 12px;
+}
+
+
